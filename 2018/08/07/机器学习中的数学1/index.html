@@ -439,7 +439,7 @@ height:50vh;
 <p>借助直角坐标系来完成这个证明，请看图：</p>
 <p><img src="/2018/08/07/机器学习中的数学1/三角函数.jpg" alt="&quot;三角函数&quot;"></p>
 <p>如图，我们可以得出结论，面积相比 <strong>三角形AOB &lt; 扇形AOB &lt; 三角形BOC</strong></p>
-<p>假设<script type="math/tex">\angle AOB</script>为x，那么弧AB为x，同时容易得出</p>
+<p>假设<script type="math/tex">\angle AOB​</script>为x，那么弧AB为x，同时容易得出</p>
 <p>三角形AOB的面积为<script type="math/tex">\frac {sin(x)}{2}</script></p>
 <p>扇形AOB面积为<script type="math/tex">\frac{x}{2}</script></p>
 <p>三角形BOC面积为<script type="math/tex">\frac{tan(x)}{2}</script></p>
@@ -447,12 +447,12 @@ height:50vh;
 <p>因为x是大于0的数，所以同时除以x，有<script type="math/tex">\frac{sin(x)}{x} < 1 < \frac{tan(x)}{x}</script>，可以转化为<script type="math/tex">\frac{sin(x)}{x} < 1 < \frac{sin(x)}{x} \frac{1}{cos(x)}</script></p>
 <p>将两个小于号拆开可以得到：<script type="math/tex">\frac{sin(x)}{x} < 1</script> 和 <script type="math/tex">1 < \frac{sin(x)}{x} \frac{1}{cos(x)}</script>，后者可以化简为<script type="math/tex">cos(x) < \frac{sin(x)}{x}</script></p>
 <p>结合两者，可以推出：<script type="math/tex">cos(x) < \frac{sin(x)}{x} < 1</script></p>
-<p>最后，因为<script type="math/tex">\lim_{x \rightarrow 0}cos(x) = 1</script> 且 <script type="math/tex">\lim_{x \rightarrow 0} 1 = 1</script>，根据两边夹定理，可以得出</p>
-<script type="math/tex; mode=display">1 \leq \lim_{x \rightarrow 0} \frac{sin(x)}{x} \leq 1$$，$$\lim_{x \rightarrow 0} \frac{sin(x)}{x} = 1$$得证
+<p>最后，因为<script type="math/tex">\lim_{x \rightarrow 0}cos(x) = 1​</script> 且 <script type="math/tex">\lim_{x \rightarrow 0} 1 = 1​</script>，根据两边夹定理，可以得出</p>
+<script type="math/tex; mode=display">1 \leq \lim_{x \rightarrow 0} \frac{sin(x)}{x} \leq 1​$$，$$\lim_{x \rightarrow 0} \frac{sin(x)}{x} = 1​$$得证
 
 <br>
 
-**指数函数：$\lim_{x \rightarrow 0} \frac{e^x - 1}{x} = 1$**
+**指数函数：$\lim_{x \rightarrow 0} \frac{e^x - 1}{x} = 1​$**
 
 要证明这个极限，首先需要知道$$e = \lim_{n \rightarrow \infty} (1 + \frac{1}{n})^{n}$$，这是一个人为定义的数，并且有着非常好的性质
 
@@ -464,7 +464,7 @@ e^{x} = (\lim_{x \rightarrow \infty}(1+\frac{1}{n})^{n})^x \\
 = \lim_{x \rightarrow \infty}(1+\frac{1}{n})^{nx}</script><p>令：<script type="math/tex">m = nx</script>，则有：<script type="math/tex">\lim_{m \rightarrow \infty}(1 + \frac{x}{m})^m</script></p>
 <p>令：<script type="math/tex">F(m,x) = (1 + \frac{x}{m})^m</script> ，则<script type="math/tex">\frac{e^x -1}{x}</script>可以写成<script type="math/tex">\lim_{m \rightarrow \infty} \frac{F(m,x) - 1}{x}</script></p>
 <p>而<script type="math/tex">F(m,x)</script>可以根据多项式展开写成：<script type="math/tex">1 + x + (\frac{x}{m})^2C_m^2 + ... + (\frac{x}{m})^mC_m^m</script></p>
-<script type="math/tex; mode=display">\because C_{m}^k = \frac{m(m-1)...(m-k+1)}{k!} < m^k</script><script type="math/tex; mode=display">\therefore F(m,x) < 1 + x(\frac{x}{m})^2m^2 +  ... + (\frac{x}{m})^mm^m</script><p>化简得<script type="math/tex">F(m,x) < 1 + x + ... + x^m​</script></p>
+<script type="math/tex; mode=display">\because C_{m}^k = \frac{m(m-1)...(m-k+1)}{k!} < m^k</script><script type="math/tex; mode=display">\therefore F(m,x) < 1 + x(\frac{x}{m})^2m^2 +  ... + (\frac{x}{m})^mm^m</script><p>化简得<script type="math/tex">F(m,x) < 1 + x + ... + x^m</script></p>
 <script type="math/tex; mode=display">
 \because 1 + x 是一个常数 \\
 \therefore 1 + x < F(m,x) < 1 + x + x^2 + ...+ x^m \\
@@ -472,7 +472,7 @@ e^{x} = (\lim_{x \rightarrow \infty}(1+\frac{1}{n})^{n})^x \\
 1 + x \leq \lim_{m \rightarrow \infty}F(m,x) \leq \frac{1}{1-x} (0 < x < 1) \\
 1 + x \leq e^x \leq \frac{1}{1-x} (0 < x < 1) \\
 1 \leq \frac{e^x-1}{x} \leq \frac{1}{1-x}\\
-1 \leq \lim_{x \rightarrow 0}\frac{e^x -1}{x} \leq 1</script><p>根据两边夹定理，得证$\lim_{x \rightarrow 0} \frac{e^x - 1}{x} = 1​$</p>
+1 \leq \lim_{x \rightarrow 0}\frac{e^x -1}{x} \leq 1</script><p>根据两边夹定理，得证$\lim_{x \rightarrow 0} \frac{e^x - 1}{x} = 1$</p>
 <h2 id="求导"><a href="#求导" class="headerlink" title="求导"></a>求导</h2><ul>
 <li>定义：<script type="math/tex">f'(x) = \lim_{\Delta \rightarrow 0} \frac{f(x + \Delta) - f(x)}{\Delta}</script></li>
 <li>几何意义：用直线逼近曲线</li>
@@ -493,6 +493,11 @@ e^{x} = (\lim_{x \rightarrow \infty}(1+\frac{1}{n})^{n})^x \\
     <!-- paginator  -->
     <ul class="post-paginator">
         <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2019/04/11/mooc-概率论与数理统计-1/" title= mooc-概率论与数理统计-1 >
+                    <div class="nextTitle">mooc-概率论与数理统计-1</div>
+                </a>
             
         </li>
         <li class="previous">
@@ -653,9 +658,34 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 2
+        Total : 5
         </div>
         <!-- search  -->
         
@@ -665,6 +695,30 @@ top:50vh;
     
     
     
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/23</span><a class="archive-post-title" href= "/2019/04/23/mooc-数据结构与算法-线性表/" >mooc-数据结构与算法-线性表</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "/2019/04/11/mooc-概率论与数理统计-2/" >mooc-概率论与数理统计-2</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "/2019/04/11/mooc-概率论与数理统计-1/" >mooc-概率论与数理统计-1</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
     
     <div class="archive-year"> 2018 </div>
     <ul class="year-list">
@@ -684,9 +738,15 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="个人"><span class="iconfont-archer">&#xe606;</span>个人</span>
+        <span class="sidebar-tag-name" data-tags="数据结构"><span class="iconfont-archer">&#xe606;</span>数据结构</span>
+    
+        <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
     
         <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
+    
+        <span class="sidebar-tag-name" data-tags="概率论"><span class="iconfont-archer">&#xe606;</span>概率论</span>
+    
+        <span class="sidebar-tag-name" data-tags="个人"><span class="iconfont-archer">&#xe606;</span>个人</span>
     
         <span class="sidebar-tag-name" data-tags="微积分"><span class="iconfont-archer">&#xe606;</span>微积分</span>
     
@@ -724,6 +784,8 @@ jsonContent:
 </div>
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="MOOC笔记"><span class="iconfont-archer">&#xe60a;</span>MOOC笔记</span>
     
         <span class="sidebar-category-name" data-categories="杂记"><span class="iconfont-archer">&#xe60a;</span>杂记</span>
     

@@ -15,7 +15,7 @@
     <meta name="description" content="Zeelam's blog">
     <meta name="Cache-Control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>Zeelam&#39;s Blog</title>
+    <title>mooc-概率论与数理统计-1 · Zeelam&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -70,6 +70,8 @@
 
     <link rel="preload" href= /css/style.css?v=20180721 as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <link rel="stylesheet" href= /css/mobile.css?v=20180721 media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
@@ -194,12 +196,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Zeelam&#39;s Blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">mooc-概率论与数理统计-1</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Zeelam's Blog.</a>
 </header>
@@ -213,24 +226,76 @@
 
 
 
+height:50vh;
+
 >
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            mooc-概率论与数理统计-1
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "数学">数学</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "概率论">概率论</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count">367</span> / Reading time: <span class="post-count">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/04/11</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -331,148 +396,76 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/04/11/mooc-概率论与数理统计-2/" >
-            
-                <span>mooc-概率论与数理统计-2</span>
-        </a>
-        <div class="abstract-content">
-            事件的相互关系及运算事件的关系（包含、相等）
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="样本空间、随机事件"><a href="#样本空间、随机事件" class="headerlink" title="样本空间、随机事件"></a>样本空间、随机事件</h1><p>自然界与社会生活中的两类现象</p>
+<ul>
+<li>确定性现象:在一定条件下必然发生的现象</li>
+<li>随机现象:在一定条件下具有多种可能结果，且试验时无法预知出现哪个结果的现象<ul>
+<li>可以在相同条件下重复进行</li>
+<li>事先知道所有可能出现的结果</li>
+<li>进行试验前并不知道哪个试验结果会发生</li>
+</ul>
+</li>
+</ul>
+<p>样本空间:随机试验的所有结果构成的集合称为样本空间，记为S={e},S中的元素e称为样本点</p>
+<ul>
+<li>一枚硬币抛一次 - S = {正面, 反面}</li>
+<li>记录一城市一日中发生的交通事故次数 - S = {0, 1, 2, …}</li>
+<li>记录一批产品的寿命x - S = {x:x &gt;= 0}</li>
+<li>记录某地一昼夜最高温度x, 最低温度y - S = {(x,y) : a &lt;= y &lt;= x &lt;= b}</li>
+</ul>
+<p>随机事件:样本空间S的子集A称为随机事件A，简称事件A，当且仅当A中的某个样本点发生称事件A发生。事件A的表示可以用集合，也可以用语言。</p>
+<ul>
+<li>把S看作事件，则每次试验S总是发生，所以S称为必然事件。</li>
+<li>如果事件只有一个样本点，称其为基本事件。</li>
+<li>如果事件是空集，里面不包含任何样本点，记为$\phi$，则每次试验$\phi$都不发生，称$\phi$为不可能事件</li>
+</ul>
 
-A $\subseteq$ B: 事件A发生一定导致B发生
-A = B
-A $\subseteq$ B
-B $\subseteq$ A
-
-
-
-事件的运算及关系
-A与B的和事件，记为A$\cup$B
-A$\cup$B = {x | x $\in$ A 或 x $\in$ B}
-A与B至少有一发生
-A与B的积事件，记为A$\cap$B
-A$\cap$B = {x | x $\in$ A 且 x $\in$ B}
-A与B同时发生
-\bigcup_{i=1}^{n} A_{i} 表示 A_{1},A_{2},A_{3},…,A_{n}中至少有一发生...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "数学">数学</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "概率论">概率论</a>
-    
-</div>
-            
-        </div>
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/04/11/mooc-概率论与数理统计-1/" >
-            
-                <span>mooc-概率论与数理统计-1</span>
-        </a>
-        <div class="abstract-content">
-            样本空间、随机事件自然界与社会生活中的两类现象
-
-确定性现象:在一定条件下必然发生的现象
-随机现象:在一定条件下具有多种可能结果，且试验时无法预知出现哪个结果的现象
-可以在相同条件下重复进行
-事先知道所有可能出现的结果
-进行试验前并不知道哪个试验结果会发生
-
-
-
-样本空间:随机试验的所有结果构成的集合称为样本空间，记为S={e},S中的元素e称为样本点
-
-一枚硬币抛一次 - S = {正面, 反面}
-记录一城市一日中发生的交通事故次数 - S = {0, 1, 2, …}
-记录一批产品的寿命x - S = {x:x &gt;= 0}
-记录某地一昼夜最高温度x, 最低温度y - S = {...
+        <div class="license-wrapper">
+            <p>原文作者: <a href="http://zeelam.com">Zeelam</a>
+            <p>原文链接: <a href="http://zeelam.com/2019/04/11/mooc-概率论与数理统计-1/">http://zeelam.com/2019/04/11/mooc-概率论与数理统计-1/</a>
+            <p>发表日期: <a href="http://zeelam.com/2019/04/11/mooc-概率论与数理统计-1/">April 11th 2019, 8:31:33 pm</a>
+            <p>版权声明: 本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "数学">数学</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "概率论">概率论</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/08/07/机器学习中的数学1/" >
-            
-                <span>机器学习中的数据_1</span>
-        </a>
-        <div class="abstract-content">
-            微分1微分学的核心思想：用熟悉且简单的函数对复杂函数进行局部逼近
-基本的概念
-常用来逼近的函数
-
-线性函数：函数的一阶导数
-多项式函数：泰勒级数
-
-
-极限定义（描述）
-
-自然语言：当x趋于a时，f(x)的极限是L。
-数学符号：\lim_{x \rightarrow a} f(x) = L
-标准语言（术语，严格证明时用）：对于任意的$\varepsilon &gt; 0$，存在一个$\delta &gt; 0$，使得对于任何$x_{*} \epsilon (a - \delta, a + \delta)$，都有$\left | f(x) - L \right | &lt; \varepsi...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/07</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "数学">数学</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "微积分">微积分</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "机器学习">机器学习</a>
-    
-</div>
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2019/04/11/mooc-概率论与数理统计-2/" title= mooc-概率论与数理统计-2 >
+                    <div class="nextTitle">mooc-概率论与数理统计-2</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2018/08/07/机器学习中的数学1/" title= 机器学习中的数据_1 >
+                    <div class="prevTitle">机器学习中的数据_1</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!--PC和WAP自适应版-->
+
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -560,6 +553,24 @@ A与B同时发生
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>目录</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#样本空间、随机事件"><span class="toc-number">1.</span> <span class="toc-text">样本空间、随机事件</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -755,6 +766,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
