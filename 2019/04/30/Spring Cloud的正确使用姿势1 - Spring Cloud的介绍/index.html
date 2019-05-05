@@ -15,7 +15,7 @@
     <meta name="description" content="Zeelam's blog">
     <meta name="Cache-Control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>[404]页面不见了 · Zeelam&#39;s Blog</title>
+    <title>Spring Cloud的正确使用姿势1 - Spring Cloud的介绍 · Zeelam&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -70,6 +70,8 @@
 
     <link rel="preload" href= /css/style.css?v=20180721 as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <link rel="stylesheet" href= /css/mobile.css?v=20180721 media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
@@ -194,7 +196,7 @@
 </head>
 
     
-        <body class="four-zero-four-body">
+        <body class="post-body">
     
     
 <header class="header">
@@ -202,6 +204,15 @@
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Zeelam&#39;s Blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Spring Cloud的正确使用姿势1 - Spring Cloud的介绍</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Zeelam's Blog.</a>
 </header>
@@ -215,32 +226,74 @@
 
 
 
+height:50vh;
+
 >
     
     <!-- 主页  -->
     
     
-    <!-- about页 -->
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/404-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            [404]页面不见了
-            <!-- about -->
+            Spring Cloud的正确使用姿势1 - Spring Cloud的介绍
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
-                找不到对象...
+            
+            <!-- 404 -->
             
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Spring Cloud">Spring Cloud</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count">429</span> / Reading time: <span class="post-count">2 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/04/30</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -341,8 +394,105 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <!-- 不可以删除，否则会调用post的layout  -->
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="一些废话"><a href="#一些废话" class="headerlink" title="一些废话"></a>一些废话</h1><p>相信大家都知道，Spring Cloud是什么，但是还是要废话一下：</p>
+<blockquote>
+<p>Spring Cloud provides tools for developers to quickly build some of the common patterns in distributed systems (e.g. configuration management, service discovery, circuit breakers, intelligent routing, micro-proxy, control bus, one-time tokens, global locks, leadership election, distributed sessions, cluster state). Coordination of distributed systems leads to boiler plate patterns, and using Spring Cloud developers can quickly stand up services and applications that implement those patterns. They will work well in any distributed environment, including the developer’s own laptop, bare metal data centres, and managed platforms such as Cloud Foundry.</p>
+</blockquote>
+<p>这段话是摘自Spring Cloud的Overview中的，抓住几个重点：</p>
+<ul>
+<li>Spring Cloud provides tools</li>
+<li>disstributed systems</li>
+<li>quickly build</li>
+</ul>
+<p>总结一下：Spring Cloud就是提供了一堆<strong>工具</strong>，这些工具（后面会一一提到）可以<strong>快速</strong>的帮助我们（程序猿🐒\媛👩）在<strong>分布式系统</strong>下搭建<strong>微服务</strong></p>
+<p>废话完毕，进入正题</p>
+<h1 id="Spring-Cloud的各种工具"><a href="#Spring-Cloud的各种工具" class="headerlink" title="Spring Cloud的各种工具"></a>Spring Cloud的各种工具</h1><p>Spring Cloud 是一个大家族，这个家族包括了各种工具，以下列举一些常用的：</p>
+<ul>
+<li>Spring Cloud Config</li>
+<li>Spring Cloud Netflix<ul>
+<li>Eureka</li>
+<li>Hystrix</li>
+<li>Feign</li>
+<li>Ribbon</li>
+<li>Zuul</li>
+</ul>
+</li>
+<li>Spring Cloud Bus</li>
+<li>Spring Cloud Security</li>
+<li>Spring Cloud Sleuth</li>
+<li>Spring Cloud Stream</li>
+</ul>
+<p>除了以上列举的这些，其实还有Spring Cloud Consul、Spring Cloud Data Flow等各种工具</p>
+<h1 id="本文的目录"><a href="#本文的目录" class="headerlink" title="本文的目录"></a>本文的目录</h1><p>扯到了以上的各种工具，那就简单介绍一下他们是干什么的，顺便把本文的目录列出来，让大家对接下来的要学习的内容有整体的了解吧</p>
+<ul>
+<li>基础内容<ul>
+<li>Spring Cloud的介绍</li>
+<li>基础的基础 - Spring Boot</li>
+<li>注册和发现中心 - Eureka</li>
+<li>负载均衡 - Ribbon</li>
+<li>服务调用 - Feign</li>
+<li>熔断机制 - Hystrix</li>
+<li>路由机制 - Zuul</li>
+<li>配置中心 - Spring Cloud Config</li>
+<li>消息机制 - Spring Cloud Stream</li>
+<li>链路跟踪 - Spring Cloud Sleuth</li>
+</ul>
+</li>
+<li>进阶内容<ul>
+<li>其他注册和发现中心 - Consul</li>
+<li>容器化 - Docker</li>
+<li>…</li>
+</ul>
+</li>
+</ul>
 
+    </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者: <a href="http://zeelam.com">Zeelam</a>
+            <p>原文链接: <a href="http://zeelam.com/2019/04/30/Spring Cloud的正确使用姿势1 - Spring Cloud的介绍/">http://zeelam.com/2019/04/30/Spring Cloud的正确使用姿势1 - Spring Cloud的介绍/</a>
+            <p>发表日期: <a href="http://zeelam.com/2019/04/30/Spring Cloud的正确使用姿势1 - Spring Cloud的介绍/">April 30th 2019, 2:23:21 pm</a>
+            <p>版权声明: 本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2019/04/30/Spring Cloud的正确使用姿势2 - 基础的基础Spring Boot/" title= Spring Cloud的正确使用姿势2 - Spring Boot >
+                    <div class="nextTitle">Spring Cloud的正确使用姿势2 - Spring Boot</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2019/04/23/mooc-数据结构与算法-线性表/" title= mooc-数据结构与算法-线性表 >
+                    <div class="prevTitle">mooc-数据结构与算法-线性表</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!--PC和WAP自适应版-->
+
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
             <!-- profile -->
             
         </div>
@@ -429,6 +579,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>目录</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一些废话"><span class="toc-number">1.</span> <span class="toc-text">一些废话</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring-Cloud的各种工具"><span class="toc-number">2.</span> <span class="toc-text">Spring Cloud的各种工具</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#本文的目录"><span class="toc-number">3.</span> <span class="toc-text">本文的目录</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -658,6 +826,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
