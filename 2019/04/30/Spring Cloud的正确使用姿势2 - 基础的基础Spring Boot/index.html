@@ -269,7 +269,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count">1,159</span> / Reading time: <span class="post-count">4 min</span></span>
+                        <span>Word count: <span class="post-count">2,526</span> / Reading time: <span class="post-count">10 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -454,7 +454,58 @@ height:50vh;
 <p>@Bean则是替代了<bean>标签</bean></p>
 <p>以上的方式都是使用Java代码的方式实现了在XML中所需要完成的工作，所以取名叫JavaConfig。那么重点来了：</p>
 <p><strong>有了JavaConfig和约定，我们则可以顺利的把很多东西按照约定搬到Java代码中去，不用再费劲去写XML了</strong></p>
-<h2 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h2>
+<h2 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h2><p>Maven我相信大家再熟悉不过了，通过Maven我们可以方便的构建我们的项目、管理jar包、甚至是利用Maven的Plugin帮助我们编译、打包我们的项目。而Spring Boot则是借助了Maven对于项目的管理帮助我们解决了各种jar包依赖的问题。</p>
+<p>通过将pom文件的parent配置为Spring-Boot-Starters-parent这个pom文件，以及引用Spring-Boot-Starters的其他各个pom文件，这样就配置好了我们使用Spring开发环境或需要依赖的jar包以及版本。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line">		</span><br><span class="line"><span class="comment">&lt;!-- spring-boot-starter-parent --&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.4.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">relativePath</span>/&gt;</span> </span><br><span class="line"> <span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line"></span><br><span class="line"> <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.zeelam.learning<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring_boot<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">name</span>&gt;</span>spring_boot<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">description</span>&gt;</span>Demo project for Spring Boot<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line"></span><br><span class="line"> <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">java.version</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 引入其他spring-boot-starter的pom文件 --&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">     <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line">		</span><br><span class="line"><span class="comment">&lt;!-- spring-boot提供的maven插件 --&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>以上为使用Spirng Boot Initializr生成的Spring Boot项目的pom文件。</p>
+<p>其中可以发现<parent>标签中有一个spring-boot-starter-parent，实际上他内部还有一个父级的pom文件spring-boot-dependencies，而这个文件中，有两个重要的标签<properties>和<dependencymanagement>。</dependencymanagement></properties></parent></p>
+<p>熟悉Maven的朋友可能就明白了，实际上<properties>是用来帮助我们定义各个依赖jar包的版本，而<dependencymanagement>则是帮助我们在子pom文件中统一管理依赖jar包（<strong>注意：这里并没有真正的把jar包导入到项目中</strong>）</dependencymanagement></properties></p>
+<p>当我们在自己的pom文件中，在<dependecies>标签中引入其他依赖时（<strong>这个时候才真正的引入了jar</strong>），就不用写版本号了。</dependecies></p>
+<p>那么spring-boot-starter又是什么呢，官方解释是</p>
+<blockquote>
+<p>Core starter, including auto-configuration support, logging and YAML</p>
+</blockquote>
+<p>点进去看一下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.4.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">scope</span>&gt;</span>compile<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-autoconfigure<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.4.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">scope</span>&gt;</span>compile<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-logging<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.4.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">scope</span>&gt;</span>compile<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.annotation<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javax.annotation-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.3.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">scope</span>&gt;</span>compile<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.1.6.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">scope</span>&gt;</span>compile<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.yaml<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>snakeyaml<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.23<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">scope</span>&gt;</span>runtime<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>其实还是在帮我们引入jar包嘛。spring-boot就包含了我们之前手动配置Spring环境的时候需要引入的一系列jar包。然后就是Spring Boot中所需的spring-boot-autoconfigure，logging等一些依赖了。</p>
+<p>有些朋友估计又有疑问了，spring-boot-autoconfigure又是什么，实际上就是利用Java Config，使得我们约定好的一些配置Bean，比方说我们配置MySQL的时候，肯定需要配置Datasource这个bean，而Datasouces这个bean中当然有url、driverClassName、username、password等属性要配置（可以是默认的也可以是手动在application.properties中配置的）可以自动交给Spring容器管理。（至于怎么做到自动的，这个后面会有专门的<strong>Spring Boot</strong>系列文章来剖析，不然的话Spring Cloud写不完了…逃）</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>至此，基于约定优于配置、Java Config、Maven(Gradle)，Spring Boot帮助我们解决了如下几个传统方式下构建Spring Application时的问题：</p>
+<ul>
+<li>XML文件过多难以管理以及XML中没有编译器提示造成的写错后难查找的问题</li>
+<li>jar包管理、冲突和版本问题</li>
+<li>启动、部署简单（一个main方法解决问题）</li>
+</ul>
+<h1 id="使用Spring-Boot"><a href="#使用Spring-Boot" class="headerlink" title="使用Spring Boot"></a>使用Spring Boot</h1><p>以上讲了那么多Spring Boot是什么，有什么优点，基于什么实现的。终于到了使用Spring Boot的环节。其实使用Spring Boot非常简单，有以下几种方法：</p>
+<h2 id="手动创建Maven项目"><a href="#手动创建Maven项目" class="headerlink" title="手动创建Maven项目"></a>手动创建Maven项目</h2><ul>
+<li>引用Spring Boot提供的jar包</li>
+<li>在项目的包名下创建一个Application类</li>
+<li>打上@SpringBootApplication注解</li>
+<li>在main方法上，写一句 <strong>SpringApplication.run(Application.class, args);</strong> 即可</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.zeelam.learning.spring_boot;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.SpringApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Application</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		SpringApplication.run(Application.class, args);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注意：项目包名的意思是com.zeelam.learning.spring_boot下面</strong>，也就是说在这个包下面，还有其他很多的包，比如说com.zeelam.learning.spring_boot.domain,com.zeelam.learning.spring_boot.mapper等等。</p>
+<p>之所以需要这样做的原因是@SpringBootApplication注解实际上是由三个注解：</p>
+<ul>
+<li><p>@SpringBootConfiguration</p>
+</li>
+<li><p>@EnableAutoConfiguration</p>
+</li>
+<li><p>@ComponentScan</p>
+</li>
+</ul>
+<p>组成，而在ComponentScan上默认的的值是扫描当前包及其子包，所以一般都将Application这个类放在最上层的包里面。</p>
+<h2 id="从https-start-spring-io-上面构建并下载下来"><a href="#从https-start-spring-io-上面构建并下载下来" class="headerlink" title="从https://start.spring.io/上面构建并下载下来"></a>从<a href="https://start.spring.io/上面构建并下载下来" target="_blank" rel="noopener">https://start.spring.io/上面构建并下载下来</a></h2><ul>
+<li>到<a href="https://start.spring.io/上" target="_blank" rel="noopener">https://start.spring.io/上</a></li>
+<li>选择你需要的依赖、版本等</li>
+<li>构建、下载，然后在IDE中打开即可</li>
+</ul>
+<p><img src="https://zeelam-blog.oss-cn-shenzhen.aliyuncs.com/20190507010946.png" alt=""></p>
+<h2 id="在IDE中使用提供的插件直接构建"><a href="#在IDE中使用提供的插件直接构建" class="headerlink" title="在IDE中使用提供的插件直接构建"></a>在IDE中使用提供的插件直接构建</h2><p>实际上还是通过Spring Initializr来做这件事，只是IDE帮你直接封装好了，不需要再去下载到本地再打开。这里使用IDEA作为演示</p>
+<p><img src="https://zeelam-blog.oss-cn-shenzhen.aliyuncs.com/20190507011256.png" alt=""></p>
+<p><img src="/2019/04/30/Spring Cloud的正确使用姿势2 - 基础的基础Spring Boot/Users/Zeelam/Library/Application Support/typora-user-images/image-20190507011442042.png" alt="image-20190507011442042"></p>
+<p><img src="https://zeelam-blog.oss-cn-shenzhen.aliyuncs.com/20190507011824.png" alt=""></p>
+<p>然后按下Next，IDEA就会直接帮你构建一个Spring Boot项目，是不是So easy。</p>
+
     </article>
     <!-- license  -->
     
@@ -597,7 +648,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>目录</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring-Boot是什么"><span class="toc-number">1.</span> <span class="toc-text">Spring Boot是什么</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#just-run"><span class="toc-number">2.</span> <span class="toc-text">just run</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring-Boot如何帮我们解决这些问题"><span class="toc-number">3.</span> <span class="toc-text">Spring Boot如何帮我们解决这些问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#约定优于配置"><span class="toc-number">3.1.</span> <span class="toc-text">约定优于配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring-JavaConfig"><span class="toc-number">3.2.</span> <span class="toc-text">Spring JavaConfig</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Maven"><span class="toc-number">3.3.</span> <span class="toc-text">Maven</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring-Boot是什么"><span class="toc-number">1.</span> <span class="toc-text">Spring Boot是什么</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#just-run"><span class="toc-number">2.</span> <span class="toc-text">just run</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring-Boot如何帮我们解决这些问题"><span class="toc-number">3.</span> <span class="toc-text">Spring Boot如何帮我们解决这些问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#约定优于配置"><span class="toc-number">3.1.</span> <span class="toc-text">约定优于配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring-JavaConfig"><span class="toc-number">3.2.</span> <span class="toc-text">Spring JavaConfig</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Maven"><span class="toc-number">3.3.</span> <span class="toc-text">Maven</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">3.4.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用Spring-Boot"><span class="toc-number">4.</span> <span class="toc-text">使用Spring Boot</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#手动创建Maven项目"><span class="toc-number">4.1.</span> <span class="toc-text">手动创建Maven项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#从https-start-spring-io-上面构建并下载下来"><span class="toc-number">4.2.</span> <span class="toc-text">从https://start.spring.io/上面构建并下载下来</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在IDE中使用提供的插件直接构建"><span class="toc-number">4.3.</span> <span class="toc-text">在IDE中使用提供的插件直接构建</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -610,6 +661,12 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
     
     
     
@@ -736,21 +793,21 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Spring Cloud"><span class="iconfont-archer">&#xe606;</span>Spring Cloud</span>
     
-        <span class="sidebar-tag-name" data-tags="Spring Boot"><span class="iconfont-archer">&#xe606;</span>Spring Boot</span>
+        <span class="sidebar-tag-name" data-tags="数据结构"><span class="iconfont-archer">&#xe606;</span>数据结构</span>
+    
+        <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
     
         <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
     
         <span class="sidebar-tag-name" data-tags="概率论"><span class="iconfont-archer">&#xe606;</span>概率论</span>
     
-        <span class="sidebar-tag-name" data-tags="数据结构"><span class="iconfont-archer">&#xe606;</span>数据结构</span>
-    
-        <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
-    
-        <span class="sidebar-tag-name" data-tags="个人"><span class="iconfont-archer">&#xe606;</span>个人</span>
-    
         <span class="sidebar-tag-name" data-tags="微积分"><span class="iconfont-archer">&#xe606;</span>微积分</span>
     
         <span class="sidebar-tag-name" data-tags="机器学习"><span class="iconfont-archer">&#xe606;</span>机器学习</span>
+    
+        <span class="sidebar-tag-name" data-tags="个人"><span class="iconfont-archer">&#xe606;</span>个人</span>
+    
+        <span class="sidebar-tag-name" data-tags="Spring Boot"><span class="iconfont-archer">&#xe606;</span>Spring Boot</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -791,9 +848,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Java/微服务"><span class="iconfont-archer">&#xe60a;</span>Java/微服务</span>
     
-        <span class="sidebar-category-name" data-categories="杂记"><span class="iconfont-archer">&#xe60a;</span>杂记</span>
-    
         <span class="sidebar-category-name" data-categories="机器学习"><span class="iconfont-archer">&#xe60a;</span>机器学习</span>
+    
+        <span class="sidebar-category-name" data-categories="杂记"><span class="iconfont-archer">&#xe60a;</span>杂记</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
