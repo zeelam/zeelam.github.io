@@ -22,7 +22,7 @@
     <meta name="description" content="Zeelam's Blog.">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>Zeelam&#39;s Blog</title>
+    <title>机器学习中的数学-1-微分学的基本概念 · Zeelam&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Zeelam&#39;s Blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">机器学习中的数学-1-微分学的基本概念</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Zeelam's Blog.</a>
 </header>
@@ -220,24 +231,78 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            机器学习中的数学-1-微分学的基本概念
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "数学">数学</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "微积分">微积分</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "机器学习">机器学习</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">1,118</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2018/08/07</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,94 +403,197 @@
 </script>
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/08/07/机器学习中的数学-1-微分学的基本概念/" >
-            
-                <span>机器学习中的数学-1-微分学的基本概念</span>
-        </a>
-        <div class="abstract-content">
-            微分
-微分学的核心思想：用熟悉且简单的函数对复杂函数进行局部逼近
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="微分"><a href="#微分" class="headerlink" title="微分"></a>微分</h1><blockquote>
+<p>微分学的核心思想：用熟悉且简单的函数对复杂函数进行局部逼近</p>
+</blockquote>
+<h2 id="基本的概念"><a href="#基本的概念" class="headerlink" title="基本的概念"></a>基本的概念</h2><ul>
+<li><p>常用来逼近的函数</p>
+<ul>
+<li>线性函数：函数的一阶导数(<script type="math/tex">y = kx + b</script>)</li>
+<li>多项式函数：泰勒级数</li>
+</ul>
+</li>
+<li><p>极限定义（描述）</p>
+<ul>
+<li><p>自然语言：当x趋于a时，f(x)的极限是L。</p>
+</li>
+<li><p>数学符号：<script type="math/tex">\lim_{x \rightarrow a} f(x) = L</script></p>
+</li>
+<li><p>标准语言（术语，严格证明时用）：</p>
+<p>对于任意的$\varepsilon &gt; 0$，存在一个$\delta &gt; 0$，使得对于任何$x_{*} \epsilon (a - \delta, a + \delta)$，都有$\left | f(x) - L \right | &lt; \varepsilon$</p>
+</li>
+</ul>
+</li>
+<li><p>无穷小</p>
+<ul>
+<li><p>定义：一般把趋于零的极限称为无穷小。</p>
+</li>
+<li><p>无穷小阶数：</p>
+<p>趋于零的速度越快的无穷小，其阶数越高。比$x^n, x \rightarrow 0$（n阶无穷小），趋于零速度还快的无穷小记为$o(x^n)$</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="两边夹定理"><a href="#两边夹定理" class="headerlink" title="两边夹定理"></a>两边夹定理</h2><p>如果$f(x) &lt; g(x) &lt; h(x)$，而且这三个函数都在a点处有极限，那么<script type="math/tex">\lim_{x \rightarrow a} f(x) \leq \lim_{x \rightarrow a} g(x) \leq \lim_{x \rightarrow a} h(x)</script></p>
+<ul>
+<li>由两边夹定理推导出的结论<ul>
+<li>三角函数：$\lim_{x \rightarrow 0} \frac{sin(x)}{x} = 1$</li>
+<li>指数函数：$\lim_{x \rightarrow 0} \frac{e^x - 1}{x} = 1$<ul>
+<li>自然对数底数：$e = \lim_{x \rightarrow 0} (1 + \frac{1}{n})^n$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>下面是一些证明过程</strong><br><br><br><strong>三角函数：$\lim_{x \rightarrow 0} \frac{sin(x)}{x} = 1$</strong></p>
+<p>借助直角坐标系来完成这个证明，请看图：<br><img src="https://zeelam-blog.oss-cn-shenzhen.aliyuncs.com/三角函数.jpg" alt=""></p>
+<p>如图，我们可以得出结论，面积相比 <strong>三角形AOB &lt; 扇形AOB &lt; 三角形BOC</strong></p>
+<p>假设<script type="math/tex">\angle AOB</script>为x，那么弧AB为x，同时容易得出</p>
+<p>三角形AOB的面积为<script type="math/tex">\frac {sin(x)}{2}</script></p>
+<p>扇形AOB面积为<script type="math/tex">\frac{x}{2}</script></p>
+<p>三角形BOC面积为<script type="math/tex">\frac{tan(x)}{2}</script></p>
+<p>根据观察得出的结论，可以得到<script type="math/tex">sin(x) < x < tan(x)</script></p>
+<p>因为x是大于0的数，并且我们想研究的数为<script type="math/tex">\frac{sin(x)}{x}</script>，所以同时除以x，有<script type="math/tex">\frac{sin(x)}{x} < 1 < \frac{tan(x)}{x}</script>，可以转化为<script type="math/tex">\frac{sin(x)}{x} < 1 < \frac{sin(x)}{x} \frac{1}{cos(x)}</script></p>
+<p>将两个小于号拆开可以得到：<script type="math/tex">\frac{sin(x)}{x} < 1</script> 和 <script type="math/tex">1 < \frac{sin(x)}{x} \frac{1}{cos(x)}</script>，后者可以化简为<script type="math/tex">cos(x) < \frac{sin(x)}{x}</script></p>
+<p>结合两者，可以推出：<script type="math/tex">cos(x) < \frac{sin(x)}{x} < 1</script></p>
+<p>最后，因为<script type="math/tex">\lim_{x \rightarrow 0}cos(x) = 1</script> 且 <script type="math/tex">\lim_{x \rightarrow 0} 1 = 1</script>，根据两边夹定理，可以得出</p>
+<script type="math/tex; mode=display">1 \leq \lim_{x \rightarrow 0} \frac{sin(x)}{x} \leq 1$$，$$\lim_{x \rightarrow 0} \frac{sin(x)}{x} = 1$$得证
 
-基本的概念
-常用来逼近的函数
+<br>
 
-线性函数：函数的一阶导数(y = kx + b)
-多项式函数：泰勒级数
+**指数函数：$\lim_{x \rightarrow 0} \frac{e^x - 1}{x} = 1$**
 
+要证明这个极限，首先需要知道$$e = \lim_{n \rightarrow \infty} (1 + \frac{1}{n})^{n}$$，这是一个人为定义的数，并且有着非常好的性质
 
-极限定义（描述）
+接下来是证明：
 
-自然语言：当x趋于a时，f(x)的极限是L。
+要讨论$$\frac{e^x - 1}{x}</script><p>先看<script type="math/tex">e^x</script>，根据定义可知：</p>
+<script type="math/tex; mode=display">
+e^{x} = (\lim_{x \rightarrow \infty}(1+\frac{1}{n})^{n})^x \\
+= \lim_{x \rightarrow \infty}(1+\frac{1}{n})^{nx}</script><p>令：<script type="math/tex">m = nx</script>，则有：<script type="math/tex">\lim_{m \rightarrow \infty}(1 + \frac{x}{m})^m</script></p>
+<p>令：<script type="math/tex">F(m,x) = (1 + \frac{x}{m})^m</script> ，则<script type="math/tex">\frac{e^x -1}{x}</script>可以写成<script type="math/tex">\lim_{m \rightarrow \infty} \frac{F(m,x) - 1}{x}</script></p>
+<p>而<script type="math/tex">F(m,x)</script>可以根据二项式展开写成：<script type="math/tex">1 + x + (\frac{x}{m})^2C_m^2 + ... + (\frac{x}{m})^mC_m^m</script></p>
+<blockquote>
+<p>二项式展开公式: <script type="math/tex">(a + b)^{n} = C_{n}^{0}a^{n}b^{0} + C_{n}^{1}a^{n - 1}b^{1} + … + C_{n}^{n - r}a^{n - r}b^{r} + … + C_{n}^{n}a^{0}b^{n}</script></p>
+</blockquote>
+<script type="math/tex; mode=display">\because C_{m}^k = \frac{m(m-1)...(m-k+1)}{k!} < m^k</script><blockquote>
+<p>组合公式: <script type="math/tex">C_{n}^{m} = \frac{A_{n}^{m}}{m!} = \frac{n!}{m!(n -m)!} = C_{n}^{n-m}</script></p>
+<p>排列公式: <script type="math/tex">A_{n}^{m} = n(n-1)…(n - m + 1) = \frac{n!}{(n - m)!}</script></p>
+</blockquote>
+<p>所以把刚刚二项式展开的公式中的<script type="math/tex">C_{m}^{n}</script>都替换成<script type="math/tex">m^{n}</script>就有:</p>
+<script type="math/tex; mode=display">\therefore F(m,x) = 1 + x + (\frac{x}{m})^2C_m^2 + ... + (\frac{x}{m})^mC_m^m < 1 + x + (\frac{x}{m})^2m^2 +  ... + (\frac{x}{m})^mm^m</script><p>化简得<script type="math/tex">F(m,x) < 1 + x + ... + x^m</script></p>
+<script type="math/tex; mode=display">
+\because 1 + x 是一个常数 \\
+\therefore 1 + x < F(m,x) < 1 + x + x^2 + ...+ x^m \\
+1 + x < F(m,x) < \frac{1-x^{m+1}}{1-x}\\
+同时使m\rightarrow \infty 得:\\
+1 + x \leq \lim_{m \rightarrow \infty}F(m,x) \leq \frac{1}{1-x} (0 < x < 1) \\
+1 + x \leq e^x \leq \frac{1}{1-x} (0 < x < 1) \\
+1 \leq \frac{e^x-1}{x} \leq \frac{1}{1-x}\\
+1 \leq \lim_{x \rightarrow 0}\frac{e^x -1}{x} \leq 1</script><blockquote>
+<p>上式对<script type="math/tex">1 + x + x^2 + … + x^n</script>的化简:</p>
+<script type="math/tex; mode=display">S_{n} = 1 + x + x^2 + … + x^{n}$$ (1)式
 
-数学符号：\lim_{x \rightarrow a} f(x) = L
+$$xS_{n} = x + x^2 + x^3 + … + x^{n + 1}$$ (2)式
 
-标准语言（术语，严格证明时用）：
-对于任意的$\varepsilon &gt; 0$，存在一个$\delta &gt; 0$，使得对于任何$x_{*} \epsilon (a - \delta, a + \delta)$，都有$\left | f(x) - L \right...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/07</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "数学">数学</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "微积分">微积分</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "机器学习">机器学习</a>
-    
-</div>
-            
-        </div>
+(1) - (2)得:
+
+$$S_{n} - xS_{n} = 1 - x^{n + 1}</script><script type="math/tex; mode=display">(1 - x)S_{n}= 1 - x^{n + 1}</script><script type="math/tex; mode=display">S_{n} = 1 + x + x^2 + … + x^n = \frac{1- x^{n+1}}{1-x}</script></blockquote>
+<p>根据两边夹定理，得证$\lim_{x \rightarrow 0} \frac{e^x - 1}{x} = 1$</p>
+<h2 id="求导"><a href="#求导" class="headerlink" title="求导"></a>求导</h2><p>导数是什么: <strong>导数也是极限</strong></p>
+<h3 id="一元函数"><a href="#一元函数" class="headerlink" title="一元函数"></a>一元函数</h3><blockquote>
+<p>一阶导数定义：<script type="math/tex">f'(x) = \lim_{\Delta \rightarrow 0} \frac{f(x + \Delta) - f(x)}{\Delta}</script></p>
+</blockquote>
+<ul>
+<li>几何意义：用直线逼近曲线</li>
+<li>代数意义：用线性函数逼近复杂函数</li>
+</ul>
+<p>常见函数的导数：</p>
+<ul>
+<li><p><script type="math/tex">\frac{d}{dx} C = 0</script> (C为常数)</p>
+</li>
+<li><script type="math/tex; mode=display">\frac{d}{dx} x^n = nx^{n-1}</script></li>
+<li><script type="math/tex; mode=display">\frac{d}{dx} sin(x) = cos(x)</script></li>
+<li><script type="math/tex; mode=display">\frac{d}{dx} e^x = e^x</script></li>
+</ul>
+<h3 id="n阶导数"><a href="#n阶导数" class="headerlink" title="n阶导数"></a>n阶导数</h3><blockquote>
+<p>二阶导数: 导数的导数就是二阶导数</p>
+<p>n阶导数: 就是导数的n次导数…</p>
+</blockquote>
+<p>Taylor级数(对函数进行高阶逼近): </p>
+<p>如果一个函数<script type="math/tex">f(x)</script>是n阶可微函数, 那么:</p>
+<script type="math/tex; mode=display">f(x_{0} + \Delta) = f(x_{0}) + f'(x_{0}) \cdot \Delta + \frac{f^{(2)}(x_0)}{2} \cdot \Delta + … + \frac{f^{(n)}(x_0)}{n!} \cdot \Delta + o(\Delta^n)</script><p>函数<script type="math/tex">f(x)</script>的n阶Taylor级数就是与<script type="math/tex">f(x)</script>拥有相同前n阶导数的n阶多项式</p>
+<p><strong>为什么要做Taylor展开</strong>:</p>
+<p>因为微分的思想是逼近, 而我们自然会想到, 用多少阶导数去逼近呢? 如果使用一阶导数, 也就是线性逼近的话, 误差会不会大, 如果是使用高阶导数, 那么计算会变得复杂。</p>
+<p>而Taylor级数告诉了我们一个很<strong>重要的道理</strong>:</p>
+<blockquote>
+<p>当我们做n阶Taylor展开时, <strong>最终的误差会缩小到<script type="math/tex">\Delta^n</script>这个量级</strong>.</p>
+</blockquote>
+<p>也就是说, 当我们使用线性逼近的时候，误差会是o(<script type="math/tex">\Delta</script>)这个量级, 而当我们做二阶Taylor展开时, 误差会缩小到<script type="math/tex">o(\Delta^2)</script>这个量级.</p>
+<h3 id="多元函数"><a href="#多元函数" class="headerlink" title="多元函数"></a>多元函数</h3><p>对于一个二元函数<script type="math/tex">f(x,y)</script>, 偏导数定义为:</p>
+<script type="math/tex; mode=display">\partial_{x}f(x,y) = \frac{\partial}{\partial x}f(x,y) = \lim_{\Delta x \rightarrow 0} \frac{f(x + \Delta_{x}, y) - f(x, y)}{\Delta x}</script><script type="math/tex; mode=display">\partial_{y}f(x,y) = \frac{\partial}{\partial y}f(x,y) = \lim_{\Delta y \rightarrow 0} \frac{f(x, y + \Delta_{y}) - f(x, y)}{\Delta y}</script><p>式子看上去很复杂, 实际上就是对一个参数求偏导时, 把另外<strong>不含这个参数</strong>的变量看成<strong>常数</strong></p>
+<p>之所以叫<strong>偏导数</strong>, 是因为它只是代表了这个函数的一部分导数.</p>
+<p>比如说: <script type="math/tex">\partial_{x}f(x, y)</script> 是函数<script type="math/tex">f(x, y)</script> 沿着x轴上的导数.</p>
+<p>而函数<script type="math/tex">f(x, y)</script> 沿着方向<script type="math/tex">v = (a, b)</script>方向的导数为<script type="math/tex">\nabla_{x}f(x,y) = lim_{\Delta \rightarrow 0} \frac{f(x + \Delta \cdot a , y + \Delta \cdot b) - f(x, y)}{\Delta}</script></p>
+<p>所以，实际上<strong>偏导数就是沿着坐标轴方向的方向导数</strong>!</p>
+<h3 id="梯度"><a href="#梯度" class="headerlink" title="梯度"></a>梯度</h3><p>而我们把两个偏导数求出来后, 组成的<strong>向量 <script type="math/tex">[\frac{\partial f(x, y)}{\partial_{x}}, \frac{\partial f(x, y)}{\partial_{y}}]^T</script></strong> , 则称为这个函数的<strong>梯度</strong></p>
+<ul>
+<li><p>梯度的代数意义: 对函数进行线性逼近</p>
+</li>
+<li><p>梯度的几何意义: </p>
+<p><strong>梯度方向就是函数增长最快的方向!!!</strong></p>
+<p><strong>梯度方向就是函数增长最快的方向!!!</strong></p>
+<p><strong>梯度方向就是函数增长最快的方向!!!</strong></p>
+<p>(重要的事情说3遍, 为啥呢, 下次就知道了)</p>
+</li>
+</ul>
+
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/07/24/博客搬迁/" >
-            
-                <span>博客搬迁</span>
-        </a>
-        <div class="abstract-content">
-            博客搬迁搬迁原因
-
-github上写数学公式太麻烦了..用hexo+gitpage搞了个博客,集成了LaTex. 后面会把之前在github上写的东西都搬进来..
-这个主题蛮好看的 哈哈哈 感谢提供者
-
-
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://zeelam.com">Zeelam</a>
+            <p>原文链接：<a href="http://zeelam.com/2018/08/07/机器学习中的数学-1-微分学的基本概念/">http://zeelam.com/2018/08/07/机器学习中的数学-1-微分学的基本概念/</a>
+            <p>发表日期：<a href="http://zeelam.com/2018/08/07/机器学习中的数学-1-微分学的基本概念/">August 7th 2018, 9:14:16 am</a>
+            <p>更新日期：<a href="http://zeelam.com/2018/08/07/机器学习中的数学-1-微分学的基本概念/">July 30th 2019, 10:37:29 pm</a>
+            <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/24</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "个人">个人</a>
-    
-</div>
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2019/04/11/mooc-概率论与数理统计-1/" title= "mooc-概率论与数理统计-1">
+                    <div class="nextTitle">mooc-概率论与数理统计-1</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2018/07/24/博客搬迁/" title= "博客搬迁">
+                    <div class="prevTitle">博客搬迁</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -517,6 +685,24 @@ github上写数学公式太麻烦了..用hexo+gitpage搞了个博客,集成了La
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>目录</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#微分"><span class="toc-number">1.</span> <span class="toc-text">微分</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本的概念"><span class="toc-number">1.1.</span> <span class="toc-text">基本的概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#两边夹定理"><span class="toc-number">1.2.</span> <span class="toc-text">两边夹定理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#求导"><span class="toc-number">1.3.</span> <span class="toc-text">求导</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一元函数"><span class="toc-number">1.3.1.</span> <span class="toc-text">一元函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#n阶导数"><span class="toc-number">1.3.2.</span> <span class="toc-text">n阶导数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多元函数"><span class="toc-number">1.3.3.</span> <span class="toc-text">多元函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#梯度"><span class="toc-number">1.3.4.</span> <span class="toc-text">梯度</span></a></li></ol></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -787,6 +973,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>
     
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
